@@ -1,0 +1,15 @@
+services:
+  rag-service:
+    build: .
+    image: doc-assistant-service:v1
+    container_name: doc-assistant-app
+    ports:
+      - "8001:8000"
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434/v1/chat/completions
+    volumes:
+      - ./data:/app/data
+      - C:/Users/PC/.cache/huggingface:/root/.cache/huggingface
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
