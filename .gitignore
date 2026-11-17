@@ -3,11 +3,10 @@ __pycache__/
 *.pyc
 .env
 .ipynb_checkpoints/
-data/raw/
-data/processed/
 data/vector_db/
 models/
 mlflow.db
 *.pth
 *.index
 *.pkl
+mlruns/
